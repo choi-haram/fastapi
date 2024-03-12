@@ -576,9 +576,9 @@ def get_individual_sponsors(settings: Settings):
 
     tiers: DefaultDict[float, Dict[str, SponsorEntity]] = defaultdict(dict)
     for node in nodes:
-        tiers[node.tier.monthlyPriceInDollars][
-            node.sponsorEntity.login
-        ] = node.sponsorEntity
+        tiers[node.tier.monthlyPriceInDollars][node.sponsorEntity.login] = (
+            node.sponsorEntity
+        )
     return tiers
 
 
